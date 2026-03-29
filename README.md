@@ -49,7 +49,7 @@
 ### 1. Cloner le dépôt
 
 ```bash
-git clone https://github.com/<votre-pseudo>/tubor.git
+git clone https://github.com/nouhailler/tubor.git
 cd tubor
 ```
 
