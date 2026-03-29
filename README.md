@@ -29,7 +29,7 @@
 
 ## Captures d'écran
 
-> *(à venir une fois le dépôt publié)*
+![Interface principale de Tubor](screenshots/tubor-main.png)
 
 ---
 
