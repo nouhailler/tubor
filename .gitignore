@@ -41,3 +41,7 @@ Thumbs.db
 # Distribution
 *.AppImage
 *.snap
+
+# Packaging Debian — artefacts de build
+packaging/build/
+packaging/*.deb

@@ -1,2 +1,12 @@
+# Tubor — Dépendances Python
+# Généré automatiquement — dernière vérification 2026-03-30
+
+# Interface graphique
 PyQt6>=6.4.0
+
+# Moteur de téléchargement
 yt-dlp>=2023.1.1
+
+# Modules stdlib utilisés (aucune installation requise) :
+# json, os, pathlib, re, subprocess, sys, shutil, threading,
+# dataclasses, typing, signal

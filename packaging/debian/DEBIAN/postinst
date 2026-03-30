@@ -1,0 +1,37 @@
+#!/bin/bash
+# Script post-installation Tubor
+set -e
+
+echo "Configuration de Tubor..."
+
+# Installer les dépendances Python si PyQt6 n'est pas disponible via le système
+if ! python3 -c "import PyQt6" 2>/dev/null; then
+    echo "Installation de PyQt6 via pip..."
+    pip3 install --break-system-packages PyQt6>=6.4.0 2>/dev/null || \
+    pip3 install --user PyQt6>=6.4.0 2>/dev/null || \
+    echo "Avertissement : impossible d'installer PyQt6 automatiquement. Installez-le manuellement : pip install PyQt6"
+fi
+
+# Installer yt-dlp si absent
+if ! python3 -c "import yt_dlp" 2>/dev/null; then
+    echo "Installation de yt-dlp via pip..."
+    pip3 install --break-system-packages yt-dlp 2>/dev/null || \
+    pip3 install --user yt-dlp 2>/dev/null || \
+    echo "Avertissement : impossible d'installer yt-dlp automatiquement. Installez-le manuellement : pip install yt-dlp"
+fi
+
+# Mettre à jour le cache des icônes
+if command -v update-icon-caches &>/dev/null; then
+    update-icon-caches /usr/share/icons/hicolor 2>/dev/null || true
+fi
+
+# Mettre à jour la base de données des applications desktop
+if command -v update-desktop-database &>/dev/null; then
+    update-desktop-database /usr/share/applications 2>/dev/null || true
+fi
+
+echo "Tubor installé avec succès !"
+echo "Lancez l'application avec : tubor"
+echo "Ou cherchez « Tubor » dans le menu des applications."
+
+exit 0
