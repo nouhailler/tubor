@@ -1,0 +1,371 @@
+.settings-page {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ── Sidebar verticale ─────────────────────────────────────────────────────── */
+
+.settings-sidebar {
+  width: 210px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+  overflow-y: auto;
+}
+
+.settings-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 1.25rem;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, border-color 0.15s;
+  width: 100%;
+}
+
+.settings-nav-btn.active {
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  border-left-color: var(--color-accent);
+}
+
+.settings-nav-btn:hover:not(.active) {
+  background: var(--color-hover);
+}
+
+.snav-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+
+.snav-label {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.settings-nav-btn.active .snav-label {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* ── Zone contenu ──────────────────────────────────────────────────────────── */
+
+.settings-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.settings-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 760px;
+}
+
+/* ── Titres de section ────────────────────────────────────────────────────── */
+
+.settings-section-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ── Champ générique ─────────────────────────────────────────────────────── */
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.settings-label {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--color-subtext);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.settings-label.small { font-size: 0.75rem; }
+
+.settings-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.settings-hint {
+  font-size: 0.78rem;
+  color: var(--color-subtext);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.settings-hint code {
+  background: var(--color-overlay);
+  padding: 0.05rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-family: 'Courier New', monospace;
+}
+
+/* ── Grilles ─────────────────────────────────────────────────────────────── */
+
+.settings-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.settings-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 700px) {
+  .settings-row-2,
+  .settings-row-3 { grid-template-columns: 1fr; }
+}
+
+/* ── Checkboxes ──────────────────────────────────────────────────────────── */
+
+.settings-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.checkbox-label input[type="checkbox"] {
+  accent-color: var(--color-accent);
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.checkbox-label.large {
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.checkbox-label.large input[type="checkbox"] {
+  margin-top: 3px;
+}
+
+.checkbox-label span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.checkbox-label strong {
+  font-size: 0.88rem;
+}
+
+.checkbox-label small {
+  font-size: 0.78rem;
+  color: var(--color-subtext);
+  line-height: 1.4;
+}
+
+/* ── Textarea proxy ──────────────────────────────────────────────────────── */
+
+.proxy-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+/* ── Mode nuit ───────────────────────────────────────────────────────────── */
+
+.night-window {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.night-part {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.night-time-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.time-input {
+  width: 72px !important;
+}
+
+.time-unit {
+  font-size: 0.88rem;
+  color: var(--color-subtext);
+}
+
+.night-arrow {
+  font-size: 1.2rem;
+  color: var(--color-subtext);
+  padding-bottom: 0.6rem;
+}
+
+/* ── Info box ────────────────────────────────────────────────────────────── */
+
+.settings-info-box {
+  background: color-mix(in srgb, var(--color-accent) 8%, var(--color-base));
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 8px 8px 0;
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.settings-info-box strong {
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.settings-info-box p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-subtext);
+  line-height: 1.6;
+}
+
+.settings-info-box code {
+  background: var(--color-overlay);
+  padding: 0.05rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-family: 'Courier New', monospace;
+}
+
+.settings-info-box em { font-style: italic; }
+
+/* ── Moteur ──────────────────────────────────────────────────────────────── */
+
+.settings-engine-card {
+  background: var(--color-base);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-self: flex-start;
+  min-width: 280px;
+}
+
+.engine-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+}
+
+.engine-key { color: var(--color-subtext); }
+.engine-val { color: var(--color-text); }
+.engine-val.ok  { color: var(--color-success); }
+.engine-val.nok { color: var(--color-error); }
+
+.update-msg {
+  font-size: 0.82rem;
+  color: var(--color-subtext);
+  margin: 0;
+}
+
+/* ── VPN country chips ────────────────────────────────────────────────────── */
+
+.vpn-countries-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.country-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: none;
+  cursor: pointer;
+  font-size: 0.78rem;
+  color: var(--color-subtext);
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.country-chip:hover {
+  background: var(--color-hover);
+  color: var(--color-text);
+}
+
+.country-chip.active {
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+input[readonly] {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+
+.settings-footer {
+  padding: 1rem 2.5rem;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  flex-shrink: 0;
+}
+
+.save-btn {
+  padding: 0.6rem 2rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition: background 0.2s;
+}

@@ -1,0 +1,171 @@
+.download-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: border-color 0.2s;
+}
+
+.download-card.status-downloading { border-left: 3px solid var(--color-accent); }
+.download-card.status-processing  { border-left: 3px solid var(--color-warning); }
+.download-card.status-finished    { border-left: 3px solid var(--color-success); }
+.download-card.status-error       { border-left: 3px solid var(--color-error); }
+.download-card.status-cancelled   { border-left: 3px solid var(--color-subtext); opacity: 0.75; }
+.download-card.status-waiting     { border-left: 3px solid var(--color-border); }
+.download-card.status-retrying    { border-left: 3px solid var(--color-warning); }
+
+/* Ligne principale */
+.card-main {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.format-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.format-badge.format-video {
+  background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  color: var(--color-accent);
+}
+
+.format-badge.format-audio {
+  background: color-mix(in srgb, var(--color-warning) 20%, transparent);
+  color: var(--color-warning);
+}
+
+.card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-title {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.card-flag {
+  font-size: 1rem;
+  flex-shrink: 0;
+  line-height: 1;
+  cursor: default;
+}
+
+.card-url,
+.card-filepath {
+  font-size: 0.75rem;
+  color: var(--color-subtext);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-filepath {
+  font-style: italic;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.status-icon {
+  font-size: 0.95rem;
+  width: 20px;
+  text-align: center;
+}
+
+.status-downloading .status-icon { color: var(--color-accent); }
+.status-processing  .status-icon { color: var(--color-warning); }
+.status-retrying    .status-icon { color: var(--color-warning); }
+.status-finished    .status-icon { color: var(--color-success); }
+.status-error       .status-icon { color: var(--color-error); }
+.status-cancelled   .status-icon { color: var(--color-subtext); }
+
+.open-btn {
+  background: color-mix(in srgb, var(--color-success) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-success) 40%, transparent);
+  color: var(--color-success);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  transition: background 0.15s, opacity 0.15s;
+  white-space: nowrap;
+}
+
+.open-btn:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-success) 28%, transparent);
+}
+
+.open-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.cancel-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: var(--color-subtext);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cancel-btn:hover {
+  background: color-mix(in srgb, var(--color-error) 20%, transparent);
+  color: var(--color-error);
+}
+
+/* Barre de progression */
+.progress-track {
+  height: 3px;
+  background: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.status-processing .progress-fill { background: var(--color-warning); }
+.status-finished   .progress-fill { background: var(--color-success); }
+.status-error      .progress-fill { background: var(--color-error); }
+
+/* Texte de statut */
+.card-status-row { min-height: 16px; }
+
+.status-text {
+  font-size: 0.75rem;
+  color: var(--color-subtext);
+}
+
+.status-text.muted    { color: var(--color-subtext); }
+.status-text.success  { color: var(--color-success); font-weight: 500; }
+.status-text.error    { color: var(--color-error); }
+.status-text.retrying { color: var(--color-warning); }

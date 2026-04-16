@@ -1,0 +1,46 @@
+#!/bin/bash
+set -e
+
+APP_DIR="/opt/tubor"
+
+echo ""
+echo "  ╔══════════════════════════════════════╗"
+echo "  ║     Tubor v0.3.0 — Installation      ║"
+echo "  ╚══════════════════════════════════════╝"
+echo ""
+
+# ── Environnement virtuel Python ──────────────────────────────────────────────
+echo "  [1/3] Installation des dépendances Python..."
+if [ ! -d "$APP_DIR/backend/.venv" ]; then
+    python3 -m venv "$APP_DIR/backend/.venv"
+fi
+"$APP_DIR/backend/.venv/bin/pip" install -q --upgrade pip
+"$APP_DIR/backend/.venv/bin/pip" install -q -r "$APP_DIR/backend/requirements.txt"
+echo "        ✔ Backend Python OK"
+
+# ── Dépendances Node.js ───────────────────────────────────────────────────────
+echo "  [2/3] Installation des dépendances Node.js..."
+if [ ! -d "$APP_DIR/frontend/node_modules" ]; then
+    (cd "$APP_DIR/frontend" && npm install --silent 2>/dev/null)
+fi
+echo "        ✔ Frontend Node.js OK"
+
+# ── Mise à jour de la base de données d'icônes ────────────────────────────────
+echo "  [3/3] Mise à jour du cache d'icônes..."
+if command -v gtk-update-icon-cache &>/dev/null; then
+    gtk-update-icon-cache -f -t /usr/share/icons/hicolor 2>/dev/null || true
+fi
+if command -v update-desktop-database &>/dev/null; then
+    update-desktop-database /usr/share/applications 2>/dev/null || true
+fi
+echo "        ✔ Cache icônes OK"
+
+echo ""
+echo "  ✔  Tubor est installé !"
+echo ""
+echo "  Lancer depuis le terminal :   tubor"
+echo "  Ou via le menu Applications : Tubor"
+echo ""
+echo "  Interface web : http://localhost:5173"
+echo "  API docs      : http://localhost:8000/docs"
+echo ""

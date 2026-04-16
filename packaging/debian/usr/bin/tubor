@@ -1,3 +1,0 @@
-#!/bin/bash
-# Lanceur Tubor
-exec python3 /usr/lib/tubor/main.py "$@"

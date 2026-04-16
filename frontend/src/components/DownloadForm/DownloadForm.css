@@ -1,0 +1,150 @@
+.download-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.9rem 1.25rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.form-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.url-row  { flex-wrap: nowrap; align-items: flex-start; }
+.folder-input { flex: 1; }
+
+.icon-pad   { padding: 0.45rem 0.65rem; }
+.preview-btn { padding: 0.45rem 0.65rem; }
+
+/* Textarea URLs */
+.url-textarea-wrap {
+  flex: 1;
+  position: relative;
+}
+
+.url-textarea {
+  width: 100%;
+  resize: vertical;
+  line-height: 1.6;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  min-height: 110px;
+  max-height: 400px;
+  overflow-y: auto;
+  white-space: pre;
+  word-break: break-all;
+  box-sizing: border-box;
+  padding-bottom: 1.4rem; /* espace pour le badge compteur */
+}
+
+.url-count-badge {
+  position: absolute;
+  bottom: 7px;
+  right: 8px;
+  background: var(--color-accent);
+  color: var(--color-base);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.1rem 0.45rem;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.url-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.folder-label { color: var(--color-subtext); }
+.limit-input  { width: 100px; }
+
+.form-error {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--color-error);
+}
+
+/* Toggle format / playlist */
+.toggle-group {
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+.toggle-btn {
+  padding: 0.4rem 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: var(--color-subtext);
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.toggle-btn + .toggle-btn { border-left: 1px solid var(--color-border); }
+.toggle-btn.active         { background: var(--color-accent); color: var(--color-base); font-weight: 600; }
+.toggle-btn:hover:not(.active) { background: var(--color-hover); color: var(--color-text); }
+
+/* Planification */
+.schedule-row { align-items: center; }
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.83rem;
+  cursor: pointer;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+.checkbox-label input[type="checkbox"] { accent-color: var(--color-accent); }
+.schedule-input { width: auto; flex: 1; }
+
+/* Boutons Proxy / VPN rapides */
+.quick-toggles {
+  gap: 0.5rem;
+}
+
+.toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.38rem 0.9rem;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s, opacity 0.18s;
+  white-space: nowrap;
+}
+
+.toggle-pill.on {
+  background: var(--color-accent);
+  color: var(--color-base);
+  border-color: var(--color-accent);
+}
+
+.toggle-pill.off {
+  background: transparent;
+  color: var(--color-subtext);
+  border-color: var(--color-border);
+}
+
+.toggle-pill.off:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.toggle-pill:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+/* Bouton download */
+.download-btn {
+  align-self: flex-end;
+  padding: 0.55rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}

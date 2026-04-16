@@ -1,22 +1,76 @@
 <div align="center">
+  <img src="resources/tubor.svg" width="120" alt="Tubor"/>
 
-# 📥 Tubor
+  # Tubor
 
-**Interface graphique Linux pour [yt-dlp](https://github.com/yt-dlp/yt-dlp)**
-Simple par défaut · Puissant si besoin · 1000+ plateformes supportées
+  **Téléchargeur vidéo web** — YouTube, Vimeo, Twitch et 1 000+ sites
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![PyQt6](https://img.shields.io/badge/PyQt6-6.4%2B-41CD52?style=for-the-badge&logo=qt&logoColor=white)](https://pypi.org/project/PyQt6/)
-[![yt-dlp](https://img.shields.io/badge/yt--dlp-latest-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://github.com/yt-dlp/yt-dlp)
-[![Licence](https://img.shields.io/badge/Licence-GPL%20v3-orange?style=for-the-badge&logo=gnu&logoColor=white)](LICENSE)
-[![Linux](https://img.shields.io/badge/Platform-Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://kernel.org)
-[![Release](https://img.shields.io/github/v/release/nouhailler/tubor?style=for-the-badge&logo=github&color=6e40c9)](https://github.com/nouhailler/tubor/releases)
-
+  [![Version](https://img.shields.io/badge/version-0.3.0-cba6f7?style=flat-square&logo=github)](https://github.com/nouhailler/tubor/releases)
+  [![Python](https://img.shields.io/badge/Python-3.10%2B-89b4fa?style=flat-square&logo=python&logoColor=white)](https://python.org)
+  [![Node](https://img.shields.io/badge/Node.js-18%2B-a6e3a1?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org)
+  [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-94e2d5?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+  [![React](https://img.shields.io/badge/React-18-89dceb?style=flat-square&logo=react&logoColor=white)](https://react.dev)
+  [![Licence](https://img.shields.io/badge/Licence-GPL%20v3-f38ba8?style=flat-square)](LICENSE)
+  [![Linux](https://img.shields.io/badge/Platform-Linux-45475a?style=flat-square&logo=linux&logoColor=white)](https://kernel.org)
 </div>
 
 ---
 
-## 📸 Aperçu
+## ✨ Fonctionnalités
+
+<table>
+<tr>
+<td width="50%">
+
+**⬇ Téléchargement**
+- Multi-URL — collez plusieurs URLs d'un coup
+- Vidéo MP4 (360p → 1080p) ou Audio MP3 (128 → 320 kbps)
+- Prévisualisation avant téléchargement 🔍
+- Progression en temps réel (vitesse, ETA, %)
+- Drag & drop pour réordonner la file
+- Planification à une heure précise
+- Ouverture directe du fichier après téléchargement
+
+</td>
+<td width="50%">
+
+**🛡 Sécurité & Réseau**
+- Toggle Proxy ON/OFF en un clic
+- Rotation automatique de proxies (round-robin)
+- VPN Auto — change de pays sur bot-detection YouTube
+- Supporte ProtonVPN, Mullvad, NordVPN, ExpressVPN, Custom
+- Drapeau pays affiché pendant le téléchargement
+- Cookies Netscape pour contenus privés / membres
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+**📊 Tableau de bord**
+- Statistiques globales en temps réel
+- Graphique en barres empilées (14 jours)
+- Top plateformes
+- Historique filtrable (statut, format, pays)
+- Copie URL des téléchargements échoués
+
+</td>
+<td width="50%">
+
+**⚙ Configuration avancée**
+- 6 onglets : Téléchargement, Réseau, VPN, Planification, Auth, Moteur
+- Mode Nuit tranquille (fenêtre horaire configurable)
+- Thème sombre / clair (Catppuccin Mocha / Latte)
+- Mise à jour yt-dlp intégrée
+- Journal temps réel (WebSocket)
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📸 Capture d'écran
 
 <div align="center">
 
@@ -28,203 +82,175 @@ Simple par défaut · Puissant si besoin · 1000+ plateformes supportées
 
 ---
 
-## ✨ Fonctionnalités
-
-<table>
-<tr>
-<td width="50%">
-
-### 🎬 Téléchargement
-- **Vidéo & Audio** — bascule d'un clic (MP4 / MP3)
-- **Qualité** — 360p à 1080p · 128/192/320 kbps
-- **File d'attente** — traitement séquentiel automatique
-- **Playlists** — vidéo seule ou playlist entière (limite optionnelle)
-
-### ⚡ Performance & Fiabilité
-- **Progression temps réel** — vitesse, %, ETA par téléchargement
-- **Arrêt instantané** — bouton Stop ×item ou touche `Échap`
-- **Détection d'erreurs immédiate** — HTTP 403, vidéo privée, restriction d'âge…
-- **Post-traitement FFmpeg** — fusion flux, métadonnées, miniature embarquée
-
-</td>
-<td width="50%">
-
-### 🔒 Avancé
-- **Support cookies** — vidéos restreintes par âge ou membres
-- **Mise à jour yt-dlp** — bouton intégré dans les Paramètres
-- **Notifications desktop** — alerte à la fin de chaque téléchargement
-
-### 🎨 Expérience utilisateur
-- **Thèmes Catppuccin** — Mocha (sombre) & Latte (clair)
-- **Configuration persistante** — dossier, format, qualité sauvegardés
-- **Aide intégrée** — 6 onglets (démarrage, qualité, playlist, cookies…)
-- **HiDPI** — interface adaptée aux écrans haute résolution
-
-</td>
-</tr>
-</table>
-
----
-
 ## 🚀 Installation rapide
 
-### Option A — Paquet Debian `.deb` *(recommandé)*
+### Option A — Paquet Debian (recommandé)
 
-> Fonctionne sur **Ubuntu 22.04+**, **Debian 12+**, **Linux Mint 21+** et dérivés.
+> Compatible **Ubuntu 22.04+**, **Debian 12+**, **Linux Mint 21+** et dérivés.
 
 ```bash
 # Télécharger la dernière release
-wget https://github.com/nouhailler/tubor/releases/latest/download/tubor_1.0.0_all.deb
+wget https://github.com/nouhailler/tubor/releases/latest/download/tubor_0.3.0_all.deb
 
 # Installer
-sudo dpkg -i tubor_1.0.0_all.deb
-sudo apt-get install -f   # résoudre les dépendances si nécessaire
+sudo dpkg -i tubor_0.3.0_all.deb
+sudo apt-get install -f   # résoudre les dépendances si besoin
 
 # Lancer
 tubor
 ```
 
-### Option B — Script d'installation
+> L'entrée **Tubor** apparaît dans le menu des applications de votre bureau.
+
+### Option B — Depuis les sources
 
 ```bash
 git clone https://github.com/nouhailler/tubor.git
 cd tubor
-chmod +x install.sh && ./install.sh
-python3 main.py
+chmod +x start.sh
+./start.sh
 ```
 
-### Option C — Installation manuelle
+Puis ouvrez **http://localhost:5173** dans votre navigateur.
 
-```bash
-git clone https://github.com/nouhailler/tubor.git
-cd tubor
-pip install --break-system-packages -r requirements.txt
-python3 main.py
-```
+---
 
-<details>
-<summary><b>📦 Installer FFmpeg (recommandé pour la fusion vidéo/audio)</b></summary>
+## 📋 Prérequis
+
+| Outil | Version | Rôle |
+|-------|---------|------|
+| 🐍 Python | ≥ 3.10 | Backend FastAPI |
+| 🟩 Node.js | ≥ 18 | Frontend React/Vite |
+| 📦 npm | ≥ 9 | Gestion des dépendances JS |
+| 🎬 ffmpeg | toute version récente | Conversion MP3, fusion flux HD *(optionnel)* |
 
 ```bash
 # Ubuntu / Debian
-sudo apt install ffmpeg
-
-# Fedora / RHEL
-sudo dnf install ffmpeg
-
-# Arch Linux
-sudo pacman -S ffmpeg
-
-# openSUSE
-sudo zypper install ffmpeg
+sudo apt install python3 python3-venv nodejs npm ffmpeg
 ```
-
-> FFmpeg est **optionnel** mais nécessaire pour fusionner les flux vidéo/audio, embarquer les métadonnées et les miniatures.
-
-</details>
 
 ---
 
-## 🎯 Utilisation rapide
-
-```
-1.  Collez une URL              →  YouTube, Vimeo, Twitch, Dailymotion…
-2.  Choisissez 🎬 Vidéo ou 🎵 Audio
-3.  Sélectionnez la qualité     →  360p / 720p / 1080p  ·  128 / 320 kbps
-4.  Cliquez ⬇ TÉLÉCHARGER      →  ou + Ajouter à la file
-5.  Suivez la progression       →  vitesse · % · ETA en temps réel
-```
-
-> 💡 **Raccourci :** `Échap` arrête tous les téléchargements en cours
-> 💡 **Aide :** cliquez sur **❓** dans l'en-tête pour la documentation intégrée
-
----
-
-## 🏗️ Architecture
+## 🏗 Architecture
 
 ```
 tubor/
-├── 📄 main.py                 # Point d'entrée — QApplication + MainWindow
-├── 📋 requirements.txt        # Dépendances Python
-├── 🔧 install.sh              # Script d'installation Linux
-├── 📦 packaging/              # Packaging Debian (.deb)
-│   ├── build-deb.sh
-│   └── debian/
-├── 🧠 core/
-│   ├── config.py              # Config persistante → ~/.config/tubor/config.json
-│   ├── downloader.py          # DownloadWorker (QThread) + subprocess yt-dlp
-│   └── utils.py               # Validation URL · notifications · mise à jour
-└── 🖥️ ui/
-    ├── main_window.py         # Fenêtre principale
-    ├── settings_dialog.py     # Dialogue Paramètres
-    ├── download_item.py       # Widget carte par téléchargement
-    ├── help_dialog.py         # Documentation intégrée (6 onglets)
-    └── styles.py              # Thèmes QSS Catppuccin
+├── start.sh                 # Lance backend + frontend simultanément
+├── backend/                 # API FastAPI (Python)
+│   ├── main.py              # App FastAPI, montage des routes
+│   ├── requirements.txt     # fastapi, uvicorn, websockets, pydantic, yt-dlp
+│   ├── core/
+│   │   ├── config.py        # Config JSON (~/.config/tubor/config.json)
+│   │   ├── database.py      # SQLite historique (~/.config/tubor/tubor.db)
+│   │   ├── downloader.py    # DownloadManager, rotation proxy/VPN, yt-dlp subprocess
+│   │   └── utils.py         # Validation URL, version yt-dlp, mise à jour
+│   ├── api/
+│   │   ├── broadcast.py     # WebSocket ConnectionManager
+│   │   ├── websocket.py     # Endpoint /ws (événements temps réel)
+│   │   └── routes/          # downloads, config, system, stats, preview
+│   └── models/
+│       └── schemas.py       # Modèles Pydantic (Requests / Responses)
+└── frontend/                # Interface React + TypeScript + Vite
+    └── src/
+        ├── App.tsx           # Navigation principale
+        ├── api/              # Clients HTTP (config, downloads, stats, preview…)
+        ├── hooks/            # useDownloads, useWebSocket
+        └── components/       # Header, DownloadForm, DownloadList, Dashboard…
 ```
 
----
-
-## ⚙️ Détails techniques
-
 <details>
-<summary><b>🔧 Moteur de téléchargement</b></summary>
+<summary><strong>🔌 API REST & WebSocket</strong></summary>
 
-Tubor utilise `subprocess.Popen` pour lancer yt-dlp en processus séparé (pas l'API Python). Ce choix garantit :
-
-| Avantage | Détail |
-|----------|--------|
-| **Annulation fiable** | `SIGTERM` → `SIGKILL` sans dépendre des hooks internes |
-| **UI non bloquée** | Le téléchargement tourne dans un `QThread` |
-| **Erreurs immédiates** | Chaque ligne stdout analysée en temps réel par regex |
-
-18 patterns d'erreur fatale détectés : HTTP 403, vidéo privée, restriction d'âge, compte requis, vidéo supprimée…
-
-</details>
-
-<details>
-<summary><b>📊 Prérequis système</b></summary>
-
-| Outil | Version min. | Rôle |
-|-------|-------------|------|
-| 🐍 Python | **3.10+** | Environnement d'exécution |
-| 🖼️ PyQt6 | **6.4+** | Interface graphique |
-| 📹 yt-dlp | toute version récente | Moteur de téléchargement |
-| 🎬 FFmpeg | toute version | *(optionnel)* Fusion · Métadonnées · Miniatures |
-
-</details>
-
-<details>
-<summary><b>💾 Configuration</b></summary>
-
-La configuration est sauvegardée dans `~/.config/tubor/config.json` :
-
-```json
-{
-  "download_folder": "~/Téléchargements",
-  "format": "video",
-  "quality": "best",
-  "theme": "dark",
-  "embed_metadata": true,
-  "embed_thumbnail": true,
-  "use_cookies": false
-}
-```
+| Méthode | Route | Description |
+|---------|-------|-------------|
+| `GET` | `/api/downloads` | Liste des téléchargements actifs |
+| `POST` | `/api/downloads` | Ajouter un téléchargement |
+| `DELETE` | `/api/downloads/{id}` | Annuler un téléchargement |
+| `POST` | `/api/downloads/reorder` | Réordonner la file |
+| `GET` | `/api/preview?url=` | Métadonnées avant téléchargement |
+| `GET/PATCH` | `/api/config` | Lire / modifier la configuration |
+| `GET` | `/api/stats/summary` | Statistiques globales |
+| `GET` | `/api/stats/history` | Historique filtrable |
+| `WS` | `/ws` | Événements temps réel |
 
 </details>
 
 ---
 
-## 🗺️ Roadmap
+## ⚡ Utilisation rapide
 
-| Statut | Phase | Description |
-|--------|-------|-------------|
-| ✅ | Phase 1 | Prototype fonctionnel |
-| ✅ | Phase 2 | MVP complet (file, progression, annulation, erreurs, paramètres) |
-| ✅ | Phase 3 | Polish (thèmes, notifications, aide intégrée) |
-| ✅ | Phase 4 | Distribution Debian `.deb` + Release GitHub |
-| 🔄 | Phase 5 | AppImage · Flatpak · PyPI |
-| 💡 | Futur | Analyse des formats disponibles avant téléchargement |
-| 💡 | Futur | Stockage sécurisé des mots de passe via `keyring` |
+1. **Collez** une ou plusieurs URLs dans le champ (une par ligne)
+2. Cliquez **🔍** pour prévisualiser la vidéo avant de télécharger *(optionnel)*
+3. Choisissez **🎬 Vidéo** ou **🎵 Audio** et la qualité
+4. Cliquez **⬇ TÉLÉCHARGER**
+5. Suivez la progression dans la liste — cliquez **📂 Ouvrir** quand c'est fini
+
+> **Anti-blocage** : activez les toggles **🌐 Proxy** et **🛡 VPN** sous le formulaire
+> pour contourner les restrictions YouTube automatiquement.
+
+---
+
+## 🌙 Mode Nuit & Planification
+
+```
+Paramètres → Planification → Mode Nuit tranquille
+```
+
+Configurez une fenêtre horaire (ex : 22h → 6h) pour que Tubor dépose les téléchargements
+en file et les exécute automatiquement la nuit. Fonctionne même sur les plages qui enjambent minuit.
+
+---
+
+## 🔒 Proxies & VPN
+
+<details>
+<summary><strong>Configurer un proxy</strong></summary>
+
+Format accepté dans `Paramètres → Réseau & Proxies` :
+
+```
+http://host:port
+http://host:port:user:pass      ← format court, normalisé automatiquement
+socks5://host:port
+```
+
+Activez la **rotation automatique** pour changer de proxy à chaque téléchargement.
+</details>
+
+<details>
+<summary><strong>Configurer le VPN Auto</strong></summary>
+
+Dans `Paramètres → VPN Auto` :
+
+1. Activez la rotation VPN
+2. Choisissez votre client (ProtonVPN, Mullvad, NordVPN, ExpressVPN, Custom)
+3. Sélectionnez les pays de rotation (chips cliquables ou codes ISO)
+
+Sur détection de bot YouTube, Tubor exécute automatiquement la commande VPN,
+attend la reconnexion, puis relance le téléchargement depuis la nouvelle IP.
+</details>
+
+---
+
+## 📦 Construire le paquet Debian
+
+```bash
+chmod +x packaging/build_deb.sh
+./packaging/build_deb.sh
+# → génère dist/tubor_0.3.0_all.deb
+```
+
+---
+
+## 🗺 Roadmap
+
+- [x] Phase 1 — Prototype fonctionnel (PyQt6 desktop)
+- [x] Phase 2 — Architecture web (FastAPI + React)
+- [x] Phase 3 — Proxies, VPN Auto, Dashboard, Planification
+- [x] Phase 4 — Packaging Debian, release GitHub
+- [ ] Phase 5 — Mode serveur headless, API publique
+- [ ] Authentification multi-utilisateurs
+- [ ] Support Flatpak / AppImage
 
 ---
 
@@ -233,43 +259,22 @@ La configuration est sauvegardée dans `~/.config/tubor/config.json` :
 Les contributions sont les bienvenues !
 
 ```bash
-# 1. Forkez le dépôt sur GitHub
-# 2. Clonez votre fork
-git clone https://github.com/<votre-pseudo>/tubor.git
-
-# 3. Créez une branche
 git checkout -b feature/ma-fonctionnalite
-
-# 4. Commitez vos changements
-git commit -m "feat: ajoute ma fonctionnalité"
-
-# 5. Poussez et ouvrez une Pull Request
+git commit -m 'feat: ajoute ma fonctionnalité'
 git push origin feature/ma-fonctionnalite
+# → ouvrir une Pull Request
 ```
 
 ---
 
-## 📜 Licence
+## 📄 Licence
 
-Ce projet est distribué sous licence **GPL v3**. Voir [LICENSE](LICENSE) pour plus de détails.
-
----
-
-## 💖 Remerciements
-
-| Projet | Rôle |
-|--------|------|
-| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | Le moteur qui fait tout le travail — 1000+ sites supportés |
-| [FFmpeg](https://ffmpeg.org/) | Conversion, fusion et post-traitement multimédia |
-| [Catppuccin](https://catppuccin.com/) | La palette de couleurs utilisée pour les thèmes |
-| [PyQt6](https://riverbankcomputing.com/software/pyqt/) | Framework GUI Python pour Linux |
+Ce projet est distribué sous licence **GPL v3**. Voir [LICENSE](LICENSE) pour les détails.
 
 ---
 
 <div align="center">
 
-**Fait avec ❤️ pour la communauté Linux**
-
-[⬆ Haut de page](#-tubor) · [🐛 Signaler un bug](https://github.com/nouhailler/tubor/issues) · [💡 Proposer une feature](https://github.com/nouhailler/tubor/issues)
+Propulsé par [yt-dlp](https://github.com/yt-dlp/yt-dlp) · [FastAPI](https://fastapi.tiangolo.com) · [React](https://react.dev) · [ffmpeg](https://ffmpeg.org)
 
 </div>

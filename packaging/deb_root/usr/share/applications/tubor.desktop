@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Tubor
+GenericName=Téléchargeur vidéo
+Comment=Téléchargez des vidéos et de l'audio depuis YouTube et 1000+ sites
+Exec=tubor
+Icon=tubor
+Terminal=false
+StartupNotify=true
+Categories=Network;FileTransfer;Video;Audio;
+Keywords=youtube;video;download;téléchargement;audio;mp3;mp4;yt-dlp;

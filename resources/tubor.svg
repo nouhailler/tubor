@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#181825"/>
+    </linearGradient>
+    <linearGradient id="arrow-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#cba6f7"/>
+      <stop offset="100%" stop-color="#89b4fa"/>
+    </linearGradient>
+    <linearGradient id="tray-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a6e3a1"/>
+      <stop offset="100%" stop-color="#94e2d5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect width="512" height="512" rx="110" ry="110" fill="url(#bg)"/>
+
+  <!-- Film strip accents left -->
+  <rect x="56" y="148" width="22" height="216" rx="11" fill="#313244" opacity="0.9"/>
+  <rect x="62" y="170" width="10" height="24" rx="5" fill="#45475a"/>
+  <rect x="62" y="214" width="10" height="24" rx="5" fill="#45475a"/>
+  <rect x="62" y="258" width="10" height="24" rx="5" fill="#45475a"/>
+  <rect x="62" y="302" width="10" height="24" rx="5" fill="#45475a"/>
+
+  <!-- Film strip accents right -->
+  <rect x="434" y="148" width="22" height="216" rx="11" fill="#313244" opacity="0.9"/>
+  <rect x="440" y="170" width="10" height="24" rx="5" fill="#45475a"/>
+  <rect x="440" y="214" width="10" height="24" rx="5" fill="#45475a"/>
+  <rect x="440" y="258" width="10" height="24" rx="5" fill="#45475a"/>
+  <rect x="440" y="302" width="10" height="24" rx="5" fill="#45475a"/>
+
+  <!-- Download arrow shaft -->
+  <rect x="228" y="90" width="56" height="210" rx="28" fill="url(#arrow-grad)"/>
+
+  <!-- Arrow head -->
+  <path d="M130 262 L256 390 L382 262" fill="url(#arrow-grad)" stroke="none"/>
+  <!-- Rounded arrow head corners -->
+  <circle cx="130" cy="262" r="28" fill="url(#arrow-grad)"/>
+  <circle cx="382" cy="262" r="28" fill="url(#arrow-grad)"/>
+  <circle cx="256" cy="390" r="28" fill="url(#arrow-grad)"/>
+
+  <!-- Bottom tray -->
+  <rect x="108" y="422" width="296" height="44" rx="22" fill="url(#tray-grad)"/>
+
+  <!-- Small play indicator (subtle) -->
+  <circle cx="256" cy="185" r="32" fill="#1e1e2e" opacity="0.4"/>
+  <path d="M244 172 L274 185 L244 198 Z" fill="#cdd6f4" opacity="0.8"/>
+</svg>

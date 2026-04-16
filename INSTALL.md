@@ -1,94 +1,64 @@
-# 📦 Guide d'installation — Tubor
+# 📦 Guide d'installation — Tubor v0.3.0
 
-## Méthode 1 — Paquet Debian (recommandée)
+## Installation via le paquet Debian (recommandé)
 
-> Compatible : Ubuntu 22.04+, Debian 12+, Linux Mint 21+, et dérivés
+### Prérequis
 
 ```bash
-# Télécharger le paquet
-wget https://github.com/nouhailler/tubor/releases/latest/download/tubor_1.0.0_all.deb
+sudo apt install python3 python3-venv nodejs npm ffmpeg
+```
 
-# Installer avec gestion automatique des dépendances
-sudo apt install ./tubor_1.0.0_all.deb
+### Installer le .deb
 
-# Lancer
+```bash
+# Télécharger
+wget https://github.com/nouhailler/tubor/releases/latest/download/tubor_0.3.0_all.deb
+
+# Installer
+sudo dpkg -i tubor_0.3.0_all.deb
+
+# Si des dépendances manquent
+sudo apt-get install -f
+```
+
+### Lancer
+
+```bash
 tubor
 ```
 
-Tubor apparaît ensuite dans le menu des applications sous **Internet** ou **Multimédia**.
+Ou cherchez **Tubor** dans le menu de votre bureau (GNOME, KDE, XFCE…).
+
+L'interface s'ouvre dans votre navigateur à **http://localhost:5173**.
 
 ---
 
-## Méthode 2 — Script d'installation automatique
+## Installation depuis les sources
 
-```bash
-git clone https://github.com/nouhailler/tubor.git
-cd tubor
-chmod +x install.sh
-./install.sh
-```
-
-Le script :
-1. Vérifie Python 3.10+
-2. Détecte FFmpeg (et prévient si absent)
-3. Installe les dépendances Python
-4. Crée un raccourci `.desktop` dans le menu des applications
-
----
-
-## Méthode 3 — Installation manuelle
-
-### Étape 1 — Cloner le dépôt
+### 1. Cloner le dépôt
 
 ```bash
 git clone https://github.com/nouhailler/tubor.git
 cd tubor
 ```
 
-### Étape 2 — Installer les dépendances Python
+### 2. Lancer
 
 ```bash
-# Méthode pip avec isolation système
-pip install --break-system-packages -r requirements.txt
-
-# Ou dans un environnement virtuel
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+chmod +x start.sh
+./start.sh
 ```
 
-### Étape 3 — Installer FFmpeg (optionnel mais recommandé)
-
-| Distribution | Commande |
-|-------------|----------|
-| Ubuntu / Debian | `sudo apt install ffmpeg` |
-| Fedora | `sudo dnf install ffmpeg` |
-| Arch Linux | `sudo pacman -S ffmpeg` |
-| openSUSE | `sudo zypper install ffmpeg` |
-
-> FFmpeg est nécessaire pour fusionner les flux vidéo/audio (qualité 1080p), embarquer les métadonnées et les miniatures.
-
-### Étape 4 — Lancer l'application
-
-```bash
-python3 main.py
-```
+Le script installe automatiquement les dépendances Python (venv) et Node.js
+au premier lancement, puis démarre le backend et le frontend.
 
 ---
 
 ## Désinstallation
 
-### Si installé via le .deb
-
 ```bash
-sudo apt remove tubor
-```
-
-### Si installé via le script ou manuellement
-
-```bash
-# Supprimer le raccourci
-rm ~/.local/share/applications/tubor.desktop
+# Si installé via .deb
+sudo dpkg -r tubor
 
 # Supprimer la configuration (optionnel)
 rm -rf ~/.config/tubor
@@ -96,29 +66,33 @@ rm -rf ~/.config/tubor
 
 ---
 
-## Dépannage
-
-### PyQt6 introuvable
+## Vérification de l'installation
 
 ```bash
-pip install --upgrade PyQt6
-# ou
-pip install --break-system-packages PyQt6
+# Backend accessible
+curl http://localhost:8000/docs
+
+# Frontend accessible
+curl http://localhost:5173
 ```
 
-### yt-dlp introuvable ou erreurs de téléchargement
+---
+
+## Problèmes fréquents
+
+| Problème | Solution |
+|----------|----------|
+| `nodejs : Depends: ... but is not installable` | `sudo apt install nodejs npm` ou installer via [nvm](https://github.com/nvm-sh/nvm) |
+| Port 5173 ou 8000 déjà utilisé | `fuser -k 5173/tcp 8000/tcp` puis relancer |
+| ffmpeg manquant | `sudo apt install ffmpeg` |
+| Permission denied sur start.sh | `chmod +x start.sh` |
+
+---
+
+## Construire le paquet .deb soi-même
 
 ```bash
-pip install --upgrade yt-dlp
-# ou depuis l'application : Paramètres → Mettre à jour yt-dlp
-```
-
-### L'application ne démarre pas
-
-```bash
-# Vérifier Python 3.10+
-python3 --version
-
-# Vérifier les dépendances
-python3 -c "import PyQt6; import yt_dlp; print('OK')"
+chmod +x packaging/build_deb.sh
+./packaging/build_deb.sh
+# → dist/tubor_0.3.0_all.deb
 ```

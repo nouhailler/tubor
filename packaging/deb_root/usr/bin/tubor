@@ -1,0 +1,3 @@
+#!/bin/bash
+# Tubor — Lanceur principal
+exec /opt/tubor/start.sh "$@"

@@ -1,0 +1,21 @@
+Package: tubor
+Version: 0.3.0
+Architecture: all
+Maintainer: Patrick Nouhailler <contact@nouhailler.dev>
+Depends: python3 (>= 3.10), python3-venv, nodejs (>= 18), npm, ffmpeg
+Recommends: ffmpeg
+Section: net
+Priority: optional
+Homepage: https://github.com/nouhailler/tubor
+Description: Tubor — Téléchargeur vidéo web (YouTube & 1000+ sites)
+ Interface web pour yt-dlp avec backend FastAPI et frontend React.
+ .
+ Fonctionnalités principales :
+  - Téléchargement vidéo (MP4) et audio (MP3) depuis 1000+ sites
+  - Multi-URL avec progression en temps réel via WebSocket
+  - Prévisualisation des métadonnées avant téléchargement
+  - Rotation automatique de proxies (round-robin)
+  - VPN Auto : changement de pays sur détection de bot YouTube
+  - Tableau de bord avec statistiques et historique
+  - Mode Nuit tranquille et planification horaire
+  - Thème sombre / clair (Catppuccin)
